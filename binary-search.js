@@ -52,3 +52,5 @@ let array2 = [10, 20, 30, 40, 50, 60, 70];
 let x2 = 60;
 const response2 = binarySearchEfficient(array2,x2);
 console.log(response2);
+
+// time complexity is O( log N)
