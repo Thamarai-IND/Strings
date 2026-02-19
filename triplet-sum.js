@@ -15,7 +15,7 @@
  * 
  */
 let arr = [ 2, 3, 5, 6, 15 ];
-let sum = 14
+let sum = 17
 function isTripletNaive(arr,sum) {
     let n = arr.length;
 
@@ -31,3 +31,31 @@ function isTripletNaive(arr,sum) {
 }
 
 console.log(isTripletNaive(arr,sum) ? 'Pair found ': ' Pair not found ');
+// Time Complexity : O(N^3) and Space Complexity : O(1)
+
+
+// efficient solution
+
+function isTripletEfficient(arr,sum) {
+    let n = arr.length;
+
+    for(let i=0; i<n-2; i++) {
+        if(isPair(arr, sum-arr[i],i+1))
+            return true;
+    }
+    return false;
+}
+
+function isPair(arr,sum, ivalue) {
+    let i = ivalue, j = arr.length-1;
+
+    while(i<j) {
+        if((arr[i]+arr[j]) == sum)
+            return true
+        else if((arr[i]+arr[j] < sum)) i++;
+        else j--;
+    }
+    return false;
+}
+
+console.log(isTripletEfficient(arr,sum) ? 'Pair found ': ' Pair not found ');
