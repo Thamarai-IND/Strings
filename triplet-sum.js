@@ -59,3 +59,4 @@ function isPair(arr,sum, ivalue) {
 }
 
 console.log(isTripletEfficient(arr,sum) ? 'Pair found ': ' Pair not found ');
+// Time Complexity : O(N^2) and Space Complexity : O(1)
